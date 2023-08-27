@@ -246,12 +246,12 @@ h6 {
      object-fit: contain;
 }
 
-.section-header__text {
+.section-header__label {
   line-height: 1.24;
   /* 31/25 */
 }
 
-.section-header__text:not(:last-child) {
+.section-header__label:not(:last-child) {
   margin-bottom: 1.28em;
 }
 
@@ -261,6 +261,10 @@ h6 {
   line-height: 1.25;
   /* 75/60 */
   max-width: 30rem;
+}
+
+.section-header__title:not(:last-child) {
+  margin-bottom: 0.75em;
 }
 
 .section-header__title_big {
@@ -273,6 +277,12 @@ h6 {
 
 .section-header_lite .section-header__title {
   color: #fff;
+}
+
+.section-header__text {
+  line-height: 1.8;
+  /* 45/25 */
+  max-width: 33.75rem;
 }
 
 /*
@@ -343,21 +353,21 @@ h6 {
   content: counter(item, decimal-leading-zero);
 }
 
-.main__container {
+.screen-01__container {
   min-height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.main__body {
+.screen-01__body {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
   position: relative;
 }
 
-.main__body::after {
+.screen-01__body::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -367,12 +377,12 @@ h6 {
   background: rgba(28, 31, 37, 0.6);
 }
 
-.main__section-header {
+.screen-01__section-header {
   position: relative;
   z-index: 1;
 }
 
-.main__image {
+.screen-01__image {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -382,13 +392,147 @@ h6 {
      object-fit: cover;
 }
 
+.screen-02__content {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding-top: 3.125rem;
+  padding-bottom: 1.875rem;
+}
+
+.screen-02__image {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
+}
+
+.screen-02__image img {
+  max-width: 100%;
+}
+
+.screen-03__content {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding-top: 3.125rem;
+  padding-bottom: 1.875rem;
+}
+
+.screen-03__image {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
+  position: relative;
+}
+
+.screen-03__image img {
+  max-width: 100%;
+}
+
+.values-screen-03 {
+  display: -ms-grid;
+  display: grid;
+}
+
+.values-screen-03__item {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (auto)[2];
+  grid-template-columns: repeat(2, auto);
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 0.9375rem;
+}
+
+.values-screen-03__label {
+  color: #6A6E77;
+  font-size: 1.5625rem;
+}
+
+.values-screen-03__value {
+  color: #1C1F25;
+  font-weight: 700;
+}
+
+.values-screen-03__line {
+  -ms-grid-column-span: 2;
+  grid-column: span 2;
+  background: rgba(28, 31, 37, 0.3);
+  height: 0.625rem;
+}
+
+.values-screen-03__line span {
+  display: block;
+  background-color: #1C1F25;
+  height: 0.625rem;
+}
+
+@media (min-width: 29.99875em) {
+  .screen-02__container {
+    min-height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+
+  .screen-03__container {
+    min-height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+
+  .screen-03__image {
+    padding-right: 1.25rem;
+  }
+
+  .screen-03__image img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+
+@media (min-width: 29.99875em) and (min-width: 120em) {
+  .screen-03__image {
+    left: -15rem;
+  }
+}
+
 @media (min-width: 47.99875em) {
-  .main__container {
+  .screen-01__container {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
+  }
+
+  .screen-02__content {
+    padding-bottom: 3.125rem;
+    padding-right: 1.25rem;
+  }
+
+  .screen-03__content {
+    padding-bottom: 3.125rem;
   }
 }
 
@@ -421,20 +565,28 @@ h6 {
     right: 7.5rem;
   }
 
-  .main__body {
+  .screen-01__body {
     padding-top: 9.6875rem;
   }
 
-  .main__body {
+  .screen-01__body {
     padding-bottom: 9.6875rem;
   }
 
-  .main__body {
+  .screen-01__body {
     padding-left: 15rem;
   }
 
-  .main__body {
+  .screen-01__body {
     padding-right: 15rem;
+  }
+
+  .values-screen-03 {
+    padding-top: 7.5rem;
+  }
+
+  .values-screen-03 {
+    gap: 4.75rem;
   }
 }
 
@@ -467,20 +619,28 @@ h6 {
     right: 0.46875rem;
   }
 
-  .main__body {
+  .screen-01__body {
     padding-top: 3.125rem;
   }
 
-  .main__body {
+  .screen-01__body {
     padding-bottom: 3.125rem;
   }
 
-  .main__body {
+  .screen-01__body {
     padding-left: 0.9375rem;
   }
 
-  .main__body {
+  .screen-01__body {
     padding-right: 0.9375rem;
+  }
+
+  .values-screen-03 {
+    padding-top: 2.8125rem;
+  }
+
+  .values-screen-03 {
+    gap: 1.5625rem;
   }
 }
 
@@ -510,6 +670,11 @@ h6 {
         -ms-flex: 0 0 1.5625rem;
             flex: 0 0 1.5625rem;
     height: 0.3125rem;
+    border: 1px solid #eee;
+  }
+
+  .section-header__title:not(:last-child) {
+    margin-bottom: 2.2em;
   }
 
   .page__section::after {
@@ -517,12 +682,12 @@ h6 {
     right: 50%;
   }
 
-  .main__container {
+  .screen-01__container {
     padding-right: 0;
     padding-left: 0;
   }
 
-  .main__body {
+  .screen-01__body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -623,52 +788,96 @@ h6 {
 }
 
 @supports (padding-top: clamp( 3.125rem , 1.8125rem  +  6.5625vw , 9.6875rem )) {
-    .main__body {
+    .screen-01__body {
       padding-top: clamp( 3.125rem , 1.8125rem  +  6.5625vw , 9.6875rem );
     }
 }
 
 @supports not (padding-top: clamp( 3.125rem , 1.8125rem  +  6.5625vw , 9.6875rem )) {
-    .main__body {
+    .screen-01__body {
       padding-top: calc(3.125rem + 6.5625 * (100vw - 20rem) / 100);
     }
 }
 
 @supports (padding-bottom: clamp( 3.125rem , 1.8125rem  +  6.5625vw , 9.6875rem )) {
-    .main__body {
+    .screen-01__body {
       padding-bottom: clamp( 3.125rem , 1.8125rem  +  6.5625vw , 9.6875rem );
     }
 }
 
 @supports not (padding-bottom: clamp( 3.125rem , 1.8125rem  +  6.5625vw , 9.6875rem )) {
-    .main__body {
+    .screen-01__body {
       padding-bottom: calc(3.125rem + 6.5625 * (100vw - 20rem) / 100);
     }
 }
 
 @supports (padding-left: clamp( 0.9375rem , -1.875rem  +  14.0625vw , 15rem )) {
-    .main__body {
+    .screen-01__body {
       padding-left: clamp( 0.9375rem , -1.875rem  +  14.0625vw , 15rem );
     }
 }
 
 @supports not (padding-left: clamp( 0.9375rem , -1.875rem  +  14.0625vw , 15rem )) {
-    .main__body {
+    .screen-01__body {
       padding-left: calc(0.9375rem + 14.0625 * (100vw - 20rem) / 100);
     }
 }
 
 @supports (padding-right: clamp( 0.9375rem , -1.875rem  +  14.0625vw , 15rem )) {
-    .main__body {
+    .screen-01__body {
       padding-right: clamp( 0.9375rem , -1.875rem  +  14.0625vw , 15rem );
     }
 }
 
 @supports not (padding-right: clamp( 0.9375rem , -1.875rem  +  14.0625vw , 15rem )) {
-    .main__body {
+    .screen-01__body {
       padding-right: calc(0.9375rem + 14.0625 * (100vw - 20rem) / 100);
     }
 }
+
+@supports (padding-top: clamp( 2.8125rem , 1.875rem  +  4.6875vw , 7.5rem )) {
+    .values-screen-03 {
+      padding-top: clamp( 2.8125rem , 1.875rem  +  4.6875vw , 7.5rem );
+    }
+}
+
+@supports not (padding-top: clamp( 2.8125rem , 1.875rem  +  4.6875vw , 7.5rem )) {
+    .values-screen-03 {
+      padding-top: calc(2.8125rem + 4.6875 * (100vw - 20rem) / 100);
+    }
+}
+
+@supports (gap: clamp( 1.5625rem , 0.925rem  +  3.1875vw , 4.75rem )) {
+    .values-screen-03 {
+      gap: clamp( 1.5625rem , 0.925rem  +  3.1875vw , 4.75rem );
+    }
+}
+
+@supports not (gap: clamp( 1.5625rem , 0.925rem  +  3.1875vw , 4.75rem )) {
+    .values-screen-03 {
+      gap: calc(1.5625rem + 3.1875 * (100vw - 20rem) / 100);
+    }
+}
+}
+
+@media (min-width: 29.99875em) and (min-width: 20em) and (max-width: 120em) {
+@supports (left: clamp( -15rem , 1.875rem  +  -14.0625vw , -0.9375rem )) {
+    .screen-03__image {
+      left: clamp( -15rem , 1.875rem  +  -14.0625vw , -0.9375rem );
+    }
+}
+
+@supports not (left: clamp( -15rem , 1.875rem  +  -14.0625vw , -0.9375rem )) {
+    .screen-03__image {
+      left: calc(-0.9375rem + -14.0625 * (100vw - 20rem) / 100);
+    }
+}
+}
+
+@media (min-width: 29.99875em) and (max-width: 20em) {
+  .screen-03__image {
+    left: -0.9375rem;
+  }
 }
 
 @media (any-hover: hover) {
